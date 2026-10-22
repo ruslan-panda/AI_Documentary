@@ -81,7 +81,7 @@ DATABASES = {
         'NAME': 'ai_doc_db',
         'USER': 'postgres',
         'PASSWORD': os.environ.get('DB_PASSWORD'),  # Вот тут магия безопасности
-        'HOST': '127.0.0.1',
+        'HOST': os.environ.get('DB_HOST', '127.0.0.1'),
         'PORT': '5432',
     }
 }
