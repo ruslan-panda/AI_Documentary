@@ -1,11 +1,155 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Главная</title>
+    <title>Черновик проекта AI_Documentary</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h1>Главная страница проекта</h1>
-    <p>Платформа для визуализации и анализа работы методов машинного обучения.</p>
+
+    <!-- ================= ШАПКА ================= -->
+    <header>
+        <h2>ЭТО ШАПКА САЙТА (ПУСТАЯ)</h2>
+    </header>
+
+    <!-- ================= ОСНОВНАЯ ЧАСТЬ (6 БЛОКОВ С ПРОКРУТКОЙ) ================= -->
+    <main>
+        <div class="grid">
+            <!-- Блок 1 -->
+            <button class="card" popovertarget="window-1">
+                <div class="photo-placeholder">[ ФОТО СЛЕВА ]</div>
+                <div class="card-content">
+                    <h3>Блок 1</h3>
+                    <p>Здесь размещен объемный текст с подробным описанием первой темы нашего документального AI-проекта.</p>
+                    <span>Нажмите, чтобы открыть окно с Python-кодом</span>
+                </div>
+            </button>
+
+            <!-- Блок 2 -->
+            <button class="card" popovertarget="window-2">
+                <div class="photo-placeholder">[ ФОТО СЛЕВА ]</div>
+                <div class="card-content">
+                    <h3>Блок 2</h3>
+                    <p>Здесь размещен объемный текст с подробным описанием второй темы нашего документального AI-проекта.</p>
+                    <span>Нажмите, чтобы открыть окно с Python-кодом</span>
+                </div>
+            </button>
+
+            <!-- Блок 3 -->
+            <button class="card" popovertarget="window-3">
+                <div class="photo-placeholder">[ ФОТО СЛЕВА ]</div>
+                <div class="card-content">
+                    <h3>Блок 3</h3>
+                    <p>Здесь размещен объемный текст с подробным описанием третьей темы нашего документального AI-проекта.</p>
+                    <span>Нажмите, чтобы открыть окно с Python-кодом</span>
+                </div>
+            </button>
+
+            <!-- Блок 4 -->
+            <button class="card" popovertarget="window-4">
+                <div class="photo-placeholder">[ ФОТО СЛЕВА ]</div>
+                <div class="card-content">
+                    <h3>Блок 4</h3>
+                    <p>Здесь размещен объемный текст с подробным описанием четвертой темы нашего документального AI-проекта.</p>
+                    <span>Нажмите, чтобы открыть окно с Python-кодом</span>
+                </div>
+            </button>
+
+            <!-- Блок 5 -->
+            <button class="card" popovertarget="window-5">
+                <div class="photo-placeholder">[ ФОТО СЛЕВА ]</div>
+                <div class="card-content">
+                    <h3>Блок 5</h3>
+                    <p>Здесь размещен объемный текст с подробным описанием пятой темы нашего документального AI-проекта.</p>
+                    <span>Нажмите, чтобы открыть окно с Python-кодом</span>
+                </div>
+            </button>
+
+            <!-- Блок 6 -->
+            <button class="card" popovertarget="window-6">
+                <div class="photo-placeholder">[ ФОТО СЛЕВА ]</div>
+                <div class="card-content">
+                    <h3>Блок 6</h3>
+                    <p>Здесь размещен объемный текст с подробным описанием шестой темы нашего документального AI-проекта.</p>
+                    <span>Нажмите, чтобы открыть окно с Python-кодом</span>
+                </div>
+            </button>
+        </div>
+
+        <!-- ================= ВСПЛЫВАЮЩИЕ ДОП. ОКОШКИ ================= -->
+        <div id="window-1" class="modal" popover>
+            <h3>Это доп. окошко №1</h3>
+            <p>Попутная информация: объяснение логики первого блока.</p>
+            <b>Код на Python:</b>
+            <pre><code>def process_data_1():
+    print("Выполнение скрипта блока 1")
+
+process_data_1()</code></pre>
+            <button class="close-btn" popovertarget="window-1" popovertargetaction="hide">Закрыть окошко</button>
+        </div>
+
+        <div id="window-2" class="modal" popover>
+            <h3>Это доп. окошко №2</h3>
+            <p>Попутная информация: объяснение логики второго блока.</p>
+            <b>Код на Python:</b>
+            <pre><code>def process_data_2():
+    print("Выполнение скрипта блока 2")
+
+process_data_2()</code></pre>
+            <button class="close-btn" popovertarget="window-2" popovertargetaction="hide">Закрыть окошко</button>
+        </div>
+
+        <div id="window-3" class="modal" popover>
+            <h3>Это доп. окошко №3</h3>
+            <p>Попутная информация: объяснение логики третьего блока.</p>
+            <b>Код на Python:</b>
+            <pre><code>def process_data_3():
+    print("Выполнение скрипта блока 3")
+
+process_data_3()</code></pre>
+            <button class="close-btn" popovertarget="window-3" popovertargetaction="hide">Закрыть окошко</button>
+        </div>
+
+        <div id="window-4" class="modal" popover>
+            <h3>Это доп. окошко №4</h3>
+            <p>Попутная информация: объяснение логики четвертого блока.</p>
+            <b>Код на Python:</b>
+            <pre><code>def process_data_4():
+    print("Выполнение скрипта блока 4")
+
+process_data_4()</code></pre>
+            <button class="close-btn" popovertarget="window-4" popovertargetaction="hide">Закрыть окошко</button>
+        </div>
+
+        <div id="window-5" class="modal" popover>
+            <h3>Это доп. окошко №5</h3>
+            <p>Попутная информация: объяснение логики пятого блока.</p>
+            <b>Код на Python:</b>
+            <pre><code>def process_data_5():
+    print("Выполнение скрипта блока 5")
+
+process_data_5()</code></pre>
+            <button class="close-btn" popovertarget="window-5" popovertargetaction="hide">Закрыть окошко</button>
+        </div>
+
+        <div id="window-6" class="modal" popover>
+            <h3>Это доп. окошко №6</h3>
+            <p>Попутная информация: объяснение логики шестого блока.</p>
+            <b>Код на Python:</b>
+            <pre><code>def process_data_6():
+    print("Выполнение скрипта блока 6")
+
+process_data_6()</code></pre>
+            <button class="close-btn" popovertarget="window-6" popovertargetaction="hide">Закрыть окошко</button>
+        </div>
+
+    </main>
+
+    <!-- ================= ПОДВАЛ ================= -->
+    <footer>
+        <h2>ЭТО ПОДВАЛ САЙТА (ПУСТОЙ)</h2>
+    </footer>
+
 </body>
 </html>

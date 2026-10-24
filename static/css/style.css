@@ -1,0 +1,164 @@
+/* Базовый сброс отступов */
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background-color: #f4f5f7;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Шапка и подвал: резкая смена цвета без полосок */
+header, footer {
+    background-color: #1e2229;
+    color: #ffffff;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+/* Основная часть на всю ширину сайта */
+main {
+    flex: 1;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 30px;
+    box-sizing: border-box;
+}
+
+/* Сетка: 2 больших блока в строке, всего 6 блоков с прокруткой */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+}
+
+/* Большие высокие блоки с эффектом выдвижения вперед при наведении */
+.card {
+    background-color: #ffffff;
+    border: 1px solid #dcdfe6;
+    border-radius: 14px;
+    min-height: 380px;
+    padding: 30px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: row; /* Элементы в ряд: фото слева, текст справа */
+    gap: 25px;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Фото в левой части прямоугольника */
+.photo-placeholder {
+    width: 220px;
+    height: 280px;
+    background-color: #e4e7ed;
+    border: 2px dashed #c0c4cc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #606266;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    flex-shrink: 0;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+/* Объемный текст в правой части прямоугольника */
+.card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-content h3 {
+    margin: 0 0 12px 0;
+    font-size: 24px;
+    color: #1e2229;
+}
+
+.card-content p {
+    margin: 0 0 15px 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #444;
+}
+
+.card-content span {
+    font-size: 14px;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Всплывающее доп. окошко + плавное открытие */
+.modal {
+    border: 1px solid #dcdfe6;
+    border-radius: 12px;
+    padding: 30px;
+    width: 600px;
+    max-width: 90vw;
+    background: #ffffff;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
+
+    opacity: 0;
+    transform: scale(0.92);
+    transition: opacity 0.25s ease, transform 0.25s ease, overlay 0.25s allow-discrete, display 0.25s allow-discrete;
+}
+
+.modal:popover-open {
+    opacity: 1;
+    transform: scale(1);
+}
+
+@starting-style {
+    .modal:popover-open {
+        opacity: 0;
+        transform: scale(0.92);
+    }
+}
+
+.modal::backdrop {
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 0.25s ease, overlay 0.25s allow-discrete, display 0.25s allow-discrete;
+}
+
+.modal:popover-open::backdrop {
+    background-color: rgba(0, 0, 0, 0.45);
+}
+
+@starting-style {
+    .modal:popover-open::backdrop {
+        background-color: rgba(0, 0, 0, 0);
+    }
+}
+
+pre {
+    background-color: #f4f5f7;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-weight: normal;
+}
+
+.close-btn {
+    margin-top: 15px;
+    padding: 10px 18px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    background: #f4f5f7;
+    border-radius: 6px;
+}
